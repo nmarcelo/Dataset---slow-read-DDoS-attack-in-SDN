@@ -1,0 +1,125 @@
+<!-- SlowHTTPTest Analysis chart (c) Sergey Shekyan, Victor Agababov 2011  -->
+ <html>
+   <head>
+   <style>
+     body { font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif; background-color: transparent; color: #333; -webkit-font-smoothing: antialiased; } 
+     .slow_results {font-size: 12px; } 
+     </style>
+     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+     <script type="text/javascript">
+       google.load("visualization", "1", {packages:["corechart"]});
+       google.setOnLoadCallback(drawChart);
+       function drawChart() {
+         var data = new google.visualization.DataTable();
+         data.addColumn('string', 'Seconds');
+         data.addColumn('number', 'Closed');
+         data.addColumn('number', 'Pending');
+         data.addColumn('number', 'Connected');
+         data.addColumn('number', 'Service available');
+         data.addRows([
+['0',0,1,0,10000],
+['1',0,3,61,10000],
+['2',0,3,126,10000],
+['3',0,3,187,10000],
+['4',0,3,252,10000],
+['5',0,18,298,0],
+['6',0,5,376,0],
+['7',0,60,382,0],
+['8',0,61,443,10000],
+['9',0,110,454,10000],
+['10',0,171,454,10000],
+['11',0,140,547,10000],
+['12',0,201,547,10000],
+['13',0,216,594,10000],
+['14',0,278,594,10000],
+['15',0,338,594,0],
+['16',0,297,694,0],
+['17',0,356,694,0],
+['18',0,374,737,0],
+['19',0,436,737,0],
+['20',0,498,737,0],
+['21',0,445,851,0],
+['22',0,503,851,0],
+['23',0,520,894,0],
+['24',0,572,902,0],
+['25',0,632,902,0],
+['26',0,593,1001,0],
+['27',0,631,1024,0],
+['28',0,658,1057,0],
+['29',0,719,1058,0],
+['30',0,780,1058,0],
+['31',0,778,1121,0],
+['32',15,828,1118,0],
+['33',15,793,1214,0],
+['34',15,848,1222,0],
+['35',22,910,1215,0],
+['36',22,888,1298,0],
+['37',49,944,1276,0],
+['38',49,902,1380,0],
+['39',49,963,1381,0],
+['40',69,1024,1361,0],
+['41',69,1004,1442,0],
+['42',82,1066,1429,0],
+['43',86,1091,1463,0],
+['44',86,1151,1464,0],
+['45',86,1212,1464,0],
+['46',86,1274,1464,0],
+['47',86,1333,1464,0],
+['48',86,1394,1464,0],
+['49',86,1456,1464,0],
+['50',86,1517,1464,0],
+['51',86,1577,1464,0],
+['52',86,1640,1464,0],
+['53',86,1702,1464,0],
+['54',86,1764,1464,0],
+['55',86,1826,1464,0],
+['56',86,1887,1464,0],
+['57',86,1946,1464,0],
+['58',86,2009,1464,0],
+['59',86,2072,1464,0],
+['60',86,2131,1464,0],
+['61',86,2190,1464,0],
+['62',86,2250,1464,0],
+['63',86,2311,1464,0],
+['64',86,2370,1464,0],
+['65',86,2432,1464,0],
+['66',86,2492,1464,0],
+['67',86,2553,1464,0],
+['68',86,2613,1464,0],
+['69',86,2675,1464,0],
+['70',86,2736,1464,0],
+['71',86,2797,1464,0],
+['72',86,2858,1464,0],
+['73',86,2919,1464,0],
+['74',86,2978,1464,0],
+['75',86,3039,1464,0],
+['76',86,3100,1464,0],
+['77',86,3160,1464,0],
+['78',86,3222,1464,0],
+['79',86,3284,1464,0],
+['80',86,3347,1464,0],
+['81',86,3406,1464,0],
+['82',86,3468,1464,0],
+['83',86,3531,1464,0],
+['84',86,3594,1464,0],
+['85',86,3656,1464,0],
+['86',86,3715,1464,0],
+['87',86,3777,1464,0],
+['88',86,3839,1464,0],
+['89',86,3901,1464,0],
+['90',86,3964,1464,0],
+['91',122,3988,1464,0],
+        ]);
+         var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+         chart.draw(data, {'width': 600, 'height': 360, 'title': 'Test results against http://192.168.56.101/',         hAxis: {'title': 'Seconds', 'titleTextStyle': {color: '#FF0000'}},
+         vAxis: {'title': 'Connections', 'titleTextStyle': {color: '#FF0000'}, 'viewWindowMode':'maximized'}
+     });
+     }
+     </script>
+     <title>SlowHTTPTest(tm) Connection Results</title>
+   </head>
+   <body>
+   <p><table class='slow_results' border='0'><tr><th>Test parameters</th></tr><tr><td><b>Test type</b></td><td>SLOW READ</td></tr><tr><td><b>Number of connections</b></td><td>10000</td></tr><tr><td><b>Receive window range</b></td><td>1 - 1</td></tr><tr><td><b>Pipeline factor</b></td><td>1</td></tr><tr><td><b>Read rate from receive buffer</b></td><td>5 bytes / 1 sec</td></tr><tr><td><b>Connections per seconds</b></td><td>80</td></tr><tr><td><b>Timeout for probe connection</b></td><td>5</td></tr><tr><td><b>Target test duration</b></td><td>90 seconds</td></tr><tr><td><b>Using proxy</b></td><td>no proxy  </td></tr></table></p>
+     <div id="chart_div"></div>
+   </body>
+ </html>

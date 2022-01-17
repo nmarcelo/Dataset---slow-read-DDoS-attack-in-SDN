@@ -1,0 +1,125 @@
+<!-- SlowHTTPTest Analysis chart (c) Sergey Shekyan, Victor Agababov 2011  -->
+ <html>
+   <head>
+   <style>
+     body { font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif; background-color: transparent; color: #333; -webkit-font-smoothing: antialiased; } 
+     .slow_results {font-size: 12px; } 
+     </style>
+     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+     <script type="text/javascript">
+       google.load("visualization", "1", {packages:["corechart"]});
+       google.setOnLoadCallback(drawChart);
+       function drawChart() {
+         var data = new google.visualization.DataTable();
+         data.addColumn('string', 'Seconds');
+         data.addColumn('number', 'Closed');
+         data.addColumn('number', 'Pending');
+         data.addColumn('number', 'Connected');
+         data.addColumn('number', 'Service available');
+         data.addRows([
+['0',0,1,0,10000],
+['1',0,3,16,10000],
+['2',0,2,33,10000],
+['3',0,10,43,10000],
+['4',0,30,43,10000],
+['5',0,50,43,10000],
+['6',0,39,73,10000],
+['7',0,39,88,10000],
+['8',0,54,88,10000],
+['9',0,73,88,10000],
+['10',0,91,88,0],
+['11',0,96,101,0],
+['12',0,104,110,0],
+['13',0,120,110,0],
+['14',0,136,110,0],
+['15',0,157,110,0],
+['16',0,173,110,0],
+['17',0,189,110,0],
+['18',0,209,110,0],
+['19',0,229,110,0],
+['20',0,250,110,0],
+['21',0,271,110,0],
+['22',0,290,110,0],
+['23',0,311,110,0],
+['24',0,327,110,0],
+['25',0,343,110,0],
+['26',0,361,110,0],
+['27',0,382,110,0],
+['28',0,400,110,0],
+['29',0,417,110,0],
+['30',0,433,110,0],
+['31',0,452,110,0],
+['32',0,471,110,0],
+['33',0,492,110,0],
+['34',0,512,110,0],
+['35',0,532,110,0],
+['36',0,547,110,0],
+['37',0,566,110,0],
+['38',0,583,110,0],
+['39',0,601,110,0],
+['40',0,622,110,0],
+['41',0,641,111,0],
+['42',0,663,111,0],
+['43',0,681,111,0],
+['44',0,701,111,0],
+['45',0,719,111,0],
+['46',0,740,111,0],
+['47',0,760,111,0],
+['48',0,780,111,0],
+['49',0,802,111,0],
+['50',0,825,111,0],
+['51',0,845,111,0],
+['52',0,867,111,0],
+['53',0,887,111,0],
+['54',0,908,111,0],
+['55',0,925,111,0],
+['56',0,945,111,0],
+['57',0,963,111,0],
+['58',0,981,111,0],
+['59',0,998,111,0],
+['60',0,1020,111,0],
+['61',0,1039,111,0],
+['62',0,1059,111,0],
+['63',0,1083,111,0],
+['64',0,1095,119,0],
+['65',0,1112,121,0],
+['66',0,1131,121,0],
+['67',0,1149,122,0],
+['68',0,1171,122,0],
+['69',0,1197,122,0],
+['70',0,1219,122,0],
+['71',0,1243,122,0],
+['72',0,1264,122,0],
+['73',0,1286,122,0],
+['74',0,1308,122,0],
+['75',0,1331,122,0],
+['76',0,1356,122,0],
+['77',0,1381,122,0],
+['78',0,1404,122,0],
+['79',0,1427,122,0],
+['80',0,1449,122,0],
+['81',0,1471,122,0],
+['82',0,1492,122,0],
+['83',0,1513,122,0],
+['84',0,1531,122,0],
+['85',0,1553,122,0],
+['86',0,1571,123,0],
+['87',0,1583,131,0],
+['88',0,1607,131,0],
+['89',0,1631,131,0],
+['90',0,1655,131,0],
+['91',0,1678,131,0],
+        ]);
+         var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+         chart.draw(data, {'width': 600, 'height': 360, 'title': 'Test results against http://192.168.56.101/',         hAxis: {'title': 'Seconds', 'titleTextStyle': {color: '#FF0000'}},
+         vAxis: {'title': 'Connections', 'titleTextStyle': {color: '#FF0000'}, 'viewWindowMode':'maximized'}
+     });
+     }
+     </script>
+     <title>SlowHTTPTest(tm) Connection Results</title>
+   </head>
+   <body>
+   <p><table class='slow_results' border='0'><tr><th>Test parameters</th></tr><tr><td><b>Test type</b></td><td>SLOW READ</td></tr><tr><td><b>Number of connections</b></td><td>10000</td></tr><tr><td><b>Receive window range</b></td><td>1 - 1</td></tr><tr><td><b>Pipeline factor</b></td><td>1</td></tr><tr><td><b>Read rate from receive buffer</b></td><td>5 bytes / 1 sec</td></tr><tr><td><b>Connections per seconds</b></td><td>50</td></tr><tr><td><b>Timeout for probe connection</b></td><td>5</td></tr><tr><td><b>Target test duration</b></td><td>90 seconds</td></tr><tr><td><b>Using proxy</b></td><td>no proxy  </td></tr></table></p>
+     <div id="chart_div"></div>
+   </body>
+ </html>

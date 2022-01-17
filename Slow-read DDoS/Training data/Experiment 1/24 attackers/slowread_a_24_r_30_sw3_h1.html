@@ -1,0 +1,125 @@
+<!-- SlowHTTPTest Analysis chart (c) Sergey Shekyan, Victor Agababov 2011  -->
+ <html>
+   <head>
+   <style>
+     body { font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif; background-color: transparent; color: #333; -webkit-font-smoothing: antialiased; } 
+     .slow_results {font-size: 12px; } 
+     </style>
+     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+     <script type="text/javascript">
+       google.load("visualization", "1", {packages:["corechart"]});
+       google.setOnLoadCallback(drawChart);
+       function drawChart() {
+         var data = new google.visualization.DataTable();
+         data.addColumn('string', 'Seconds');
+         data.addColumn('number', 'Closed');
+         data.addColumn('number', 'Pending');
+         data.addColumn('number', 'Connected');
+         data.addColumn('number', 'Service available');
+         data.addRows([
+['0',0,1,0,10000],
+['1',0,6,15,10000],
+['2',0,7,30,10000],
+['3',0,9,47,10000],
+['4',0,25,49,10000],
+['5',0,44,49,10000],
+['6',0,38,72,10000],
+['7',0,37,91,10000],
+['8',0,44,101,10000],
+['9',0,63,101,10000],
+['10',0,79,101,10000],
+['11',0,77,121,10000],
+['12',0,91,124,10000],
+['13',0,103,130,10000],
+['14',0,121,130,10000],
+['15',0,137,130,0],
+['16',0,148,136,0],
+['17',0,161,138,0],
+['18',0,173,144,0],
+['19',0,192,144,0],
+['20',0,211,144,0],
+['21',0,222,151,0],
+['22',0,240,151,0],
+['23',0,255,151,0],
+['24',0,277,151,0],
+['25',0,296,151,0],
+['26',3,315,148,0],
+['27',3,334,148,0],
+['28',3,355,148,0],
+['29',3,373,148,0],
+['30',3,391,148,0],
+['31',3,411,148,0],
+['32',3,429,148,0],
+['33',3,447,148,0],
+['34',3,464,148,0],
+['35',3,482,148,0],
+['36',3,500,148,0],
+['37',3,519,148,0],
+['38',3,539,148,0],
+['39',3,558,148,0],
+['40',3,578,148,0],
+['41',3,598,148,0],
+['42',3,616,148,0],
+['43',3,636,148,0],
+['44',3,656,148,0],
+['45',3,676,148,0],
+['46',3,697,148,0],
+['47',3,716,148,0],
+['48',3,736,148,0],
+['49',3,757,148,0],
+['50',3,778,148,0],
+['51',3,800,148,0],
+['52',3,820,148,0],
+['53',3,839,148,0],
+['54',3,858,148,0],
+['55',3,878,148,0],
+['56',3,896,148,0],
+['57',3,914,148,0],
+['58',3,935,148,0],
+['59',3,955,148,0],
+['60',3,973,148,0],
+['61',3,993,150,0],
+['62',3,1013,151,0],
+['63',3,1032,153,0],
+['64',3,1050,155,0],
+['65',32,1036,160,0],
+['66',32,1055,160,0],
+['67',32,1075,160,0],
+['68',33,1095,160,0],
+['69',33,1119,160,0],
+['70',33,1141,160,0],
+['71',41,1154,160,0],
+['72',41,1174,160,0],
+['73',41,1194,160,0],
+['74',41,1214,160,0],
+['75',41,1235,160,0],
+['76',41,1254,160,0],
+['77',41,1274,160,0],
+['78',41,1298,160,0],
+['79',41,1317,160,0],
+['80',41,1339,160,0],
+['81',41,1362,160,0],
+['82',41,1383,160,0],
+['83',41,1403,160,0],
+['84',41,1422,160,0],
+['85',41,1441,160,0],
+['86',41,1460,160,0],
+['87',41,1479,160,0],
+['88',41,1499,160,0],
+['89',41,1519,160,0],
+['90',41,1538,160,0],
+['91',41,1559,160,0],
+        ]);
+         var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+         chart.draw(data, {'width': 600, 'height': 360, 'title': 'Test results against http://192.168.56.101/',         hAxis: {'title': 'Seconds', 'titleTextStyle': {color: '#FF0000'}},
+         vAxis: {'title': 'Connections', 'titleTextStyle': {color: '#FF0000'}, 'viewWindowMode':'maximized'}
+     });
+     }
+     </script>
+     <title>SlowHTTPTest(tm) Connection Results</title>
+   </head>
+   <body>
+   <p><table class='slow_results' border='0'><tr><th>Test parameters</th></tr><tr><td><b>Test type</b></td><td>SLOW READ</td></tr><tr><td><b>Number of connections</b></td><td>10000</td></tr><tr><td><b>Receive window range</b></td><td>1 - 1</td></tr><tr><td><b>Pipeline factor</b></td><td>1</td></tr><tr><td><b>Read rate from receive buffer</b></td><td>5 bytes / 1 sec</td></tr><tr><td><b>Connections per seconds</b></td><td>30</td></tr><tr><td><b>Timeout for probe connection</b></td><td>5</td></tr><tr><td><b>Target test duration</b></td><td>90 seconds</td></tr><tr><td><b>Using proxy</b></td><td>no proxy  </td></tr></table></p>
+     <div id="chart_div"></div>
+   </body>
+ </html>
